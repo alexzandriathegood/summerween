@@ -1,577 +1,176 @@
 <style>
-.summerween,
-.summerween * {
-  box-sizing: border-box;
-}
-
-.summerween {
-  font-family: Arial, Helvetica, sans-serif;
-  color: #f4efe8;
-  background:
-    radial-gradient(circle at 0% 0%, rgba(249,115,22,.14), transparent 24%),
-    radial-gradient(circle at 100% 0%, rgba(147,51,234,.14), transparent 26%),
-    linear-gradient(180deg, #07060b 0%, #0a0910 100%);
-  padding: 24px;
-  border-radius: 24px;
-}
-
-.summerween a {
-  color: inherit;
-  text-decoration: none;
-}
-
-.summerween .sw-wrap {
-  max-width: 1100px;
-  margin: 0 auto;
-}
-
-.summerween .sw-hero {
-  background: linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.01));
-  border: 1px solid rgba(255,255,255,.1);
-  border-radius: 24px;
-  overflow: hidden;
-  margin-bottom: 20px;
-}
-
-.summerween .sw-hero-grid {
-  display: grid;
-  grid-template-columns: 1.15fr .95fr;
-}
-
-.summerween .sw-copy {
-  padding: 32px;
-}
-
-.summerween .sw-eyebrow {
-  display: inline-block;
-  padding: 7px 12px;
-  border-radius: 999px;
-  border: 1px solid rgba(249,115,22,.28);
-  background: rgba(249,115,22,.1);
-  color: #ffd5ba;
-  letter-spacing: .08em;
-  text-transform: uppercase;
-  font-size: 12px;
-  margin-bottom: 14px;
-}
-
-.summerween h1,
-.summerween h2,
-.summerween h3,
-.summerween h4 {
-  margin: 0 0 10px;
-  line-height: 1.1;
-}
-
-.summerween h1 {
-  font-size: 52px;
-  letter-spacing: -.04em;
-}
-
-.summerween p {
-  color: #c4bccf;
-  line-height: 1.6;
-}
-
-.summerween .sw-meta {
-  margin-top: 16px;
-}
-
-.summerween .sw-chip {
-  display: inline-block;
-  margin: 0 8px 8px 0;
-  padding: 10px 14px;
-  border-radius: 999px;
-  border: 1px solid rgba(255,255,255,.1);
-  background: rgba(255,255,255,.04);
-  font-size: 14px;
-}
-
-.summerween .sw-graphic {
-  min-height: 360px;
-  padding: 18px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: linear-gradient(180deg, rgba(147,51,234,.08), rgba(249,115,22,.08));
-}
-
-.summerween .sw-graphic-box {
-  width: 100%;
-  min-height: 300px;
-  border-radius: 20px;
-  border: 2px dashed rgba(255,255,255,.18);
-  background:
-    repeating-linear-gradient(-45deg, rgba(255,255,255,.025), rgba(255,255,255,.025) 12px, transparent 12px, transparent 24px),
-    linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.015));
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 30px;
-}
-
-.summerween .sw-card {
-  background: #12101a;
-  border: 1px solid rgba(255,255,255,.1);
-  border-radius: 22px;
-  overflow: hidden;
-  margin-bottom: 18px;
-}
-
-.summerween .sw-card-head {
-  padding: 20px 22px 0;
-}
-
-.summerween .sw-label {
-  display: inline-block;
-  font-size: 12px;
-  text-transform: uppercase;
-  letter-spacing: .08em;
-  color: #ffd7c0;
-  padding: 5px 9px;
-  border-radius: 999px;
-  border: 1px solid rgba(249,115,22,.18);
-  background: rgba(249,115,22,.08);
-  margin-bottom: 10px;
-}
-
-.summerween details {
-  border-top: 1px solid rgba(255,255,255,.1);
-  background: linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.01));
-}
-
-.summerween details:first-of-type {
-  border-top: none;
-}
-
-.summerween summary {
-  list-style: none;
-  cursor: pointer;
-  padding: 18px 22px;
-  display: flex;
-  justify-content: space-between;
-  gap: 14px;
-  font-weight: bold;
-}
-
-.summerween summary::-webkit-details-marker {
-  display: none;
-}
-
-.summerween .sw-summary-text small {
-  display: block;
-  color: #c4bccf;
-  font-weight: normal;
-  font-size: 14px;
-  margin-top: 4px;
-}
-
-.summerween .sw-pill {
-  white-space: nowrap;
-  color: #ffd7c0;
-  border: 1px solid rgba(255,255,255,.08);
-  background: rgba(255,255,255,.04);
-  padding: 6px 10px;
-  border-radius: 999px;
-  font-size: 12px;
-}
-
-.summerween .sw-body {
-  padding: 0 22px 22px;
-}
-
-.summerween .sw-grid-3 {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 12px;
-}
-
-.summerween .sw-grid-2 {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 12px;
-}
-
-.summerween .sw-box {
-  background: #191624;
-  border: 1px solid rgba(255,255,255,.06);
-  border-radius: 16px;
-  padding: 14px;
-}
-
-.summerween .sw-box strong {
-  display: block;
-  font-size: 12px;
-  letter-spacing: .08em;
-  text-transform: uppercase;
-  color: #ffd7c0;
-  margin-bottom: 6px;
-}
-
-.summerween .sw-video {
-  aspect-ratio: 16/9;
-  border-radius: 14px;
-  border: 2px dashed rgba(255,255,255,.16);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 16px;
-  background: linear-gradient(180deg, rgba(249,115,22,.08), rgba(147,51,234,.08));
-  margin-bottom: 12px;
-}
-
-.summerween .sw-btns {
-  margin-top: 14px;
-}
-
-.summerween .sw-btn {
-  display: inline-block;
-  min-height: 42px;
-  line-height: 42px;
-  padding: 0 16px;
-  border-radius: 12px;
-  font-weight: bold;
-  margin: 0 8px 8px 0;
-}
-
-.summerween .sw-btn-primary {
-  color: #fff;
-  background: linear-gradient(135deg, #f97316, #9333ea);
-}
-
-.summerween .sw-btn-secondary {
-  background: rgba(255,255,255,.04);
-  border: 1px solid rgba(255,255,255,.1);
-}
-
-@media (max-width: 900px) {
-  .summerween .sw-hero-grid,
-  .summerween .sw-grid-3,
-  .summerween .sw-grid-2 {
-    grid-template-columns: 1fr;
-  }
-
-  .summerween h1 {
-    font-size: 38px;
-  }
-
-  .summerween summary {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-}
+.summerween { font-family: Arial, sans-serif; color: #f4efe8; background:#0a0910; padding:20px; border-radius:20px; }
+.summerween h1, .summerween h2, .summerween h3 { margin:0 0 10px; }
+.summerween p { color:#c4bccf; }
+.summerween .card { background:#12101a; border:1px solid rgba(255,255,255,.1); border-radius:16px; margin-bottom:16px; overflow:hidden; }
+.summerween .head { padding:16px; }
+.summerween .label { font-size:12px; text-transform:uppercase; color:#ffd7c0; margin-bottom:6px; }
+.summerween details { border-top:1px solid rgba(255,255,255,.1); }
+.summerween summary { cursor:pointer; padding:14px 16px; font-weight:bold; display:flex; justify-content:space-between; }
+.summerween .body { padding:0 16px 16px; }
+.summerween .box { background:#191624; padding:12px; border-radius:12px; margin-top:10px; }
+.summerween .btn { display:inline-block; padding:10px 14px; border-radius:8px; margin-right:8px; margin-top:10px; }
+.summerween .btn-primary { background:#f97316; color:#fff; }
+.summerween .btn-secondary { border:1px solid #555; }
 </style>
 
 <div class="summerween">
-  <div class="sw-wrap">
 
-    <div class="sw-hero">
-      <div class="sw-hero-grid">
-        <div class="sw-copy">
-          <div class="sw-eyebrow">New Haven • Summerween Festival</div>
-          <h1>Summerween Festival</h1>
-          <p>
-            Replace the placeholders below with finalized dates, venues, partner names, film information,
-            ticket links, and fundraising details.
-          </p>
-          <div class="sw-meta">
-            <span class="sw-chip">[Festival Dates Placeholder]</span>
-            <span class="sw-chip">[Main Venue Placeholder]</span>
-            <span class="sw-chip">[Ticket / RSVP Placeholder]</span>
-          </div>
-        </div>
-        <div class="sw-graphic">
-          <div class="sw-graphic-box">
-            <div>
-              <h3>Summerween Graphic Placeholder</h3>
-              <p>Insert hero poster, campaign art, or festival image here.</p>
-            </div>
-          </div>
-        </div>
-      </div>
+  <!-- HERO -->
+  <div class="card">
+    <div class="head">
+      <div class="label">New Haven • June 24–27</div>
+      <h1>Summerween Festival</h1>
+      <p>
+        This summer, a touch of Halloween arrives early.
+        Summerween is a new community-driven festival bringing spooky film,
+        creative activities, and themed gatherings to locations across New Haven.
+      </p>
+      <p>
+        Inspired by the growing love for horror and supernatural storytelling beyond the fall season,
+        Summerween invites residents to celebrate the eerie side of summer through playful,
+        city-wide events designed to bring people together.
+      </p>
     </div>
-
-    <div class="sw-card">
-      <div class="sw-card-head">
-        <div class="sw-label">Section 1</div>
-        <h2>Main Event Schedule</h2>
-        <p>Use the expandable sections below for headline programming, screenings, performances, and main festival moments.</p>
-      </div>
-
-      <details open>
-        <summary>
-          <div class="sw-summary-text">
-            [Opening Night / Main Program Block]
-            <small>[Date Placeholder] • [Venue Placeholder]</small>
-          </div>
-          <div class="sw-pill">Expand</div>
-        </summary>
-        <div class="sw-body">
-          <p>[Add a high-level description for this main event block here.]</p>
-          <div class="sw-grid-3">
-            <div class="sw-box">
-              <strong>[6:00 PM]</strong>
-              Doors / Reception<br>[Describe check-in, vendors, and entry details.]
-            </div>
-            <div class="sw-box">
-              <strong>[7:00 PM]</strong>
-              Screening / Performance<br>[Describe the headlining event.]
-            </div>
-            <div class="sw-box">
-              <strong>[9:00 PM]</strong>
-              Q&amp;A / Mixer / Party<br>[Describe the closing segment.]
-            </div>
-          </div>
-        </div>
-      </details>
-
-      <details>
-        <summary>
-          <div class="sw-summary-text">
-            [Day Two / Community Day Block]
-            <small>[Date Placeholder] • [Venue Placeholder]</small>
-          </div>
-          <div class="sw-pill">Expand</div>
-        </summary>
-        <div class="sw-body">
-          <p>[Add a high-level description for the second headline programming block.]</p>
-          <div class="sw-grid-3">
-            <div class="sw-box">
-              <strong>[1:00 PM]</strong>
-              Workshop / Family Programming<br>[Describe the workshop.]
-            </div>
-            <div class="sw-box">
-              <strong>[4:00 PM]</strong>
-              Panel / Community Activation<br>[Describe this segment.]
-            </div>
-            <div class="sw-box">
-              <strong>[8:00 PM]</strong>
-              Finale Screening / Closing Event<br>[Describe the finale.]
-            </div>
-          </div>
-        </div>
-      </details>
-    </div>
-
-    <div class="sw-card">
-      <div class="sw-card-head">
-        <div class="sw-label">Section 2</div>
-        <h2>Ancillary Events</h2>
-        <p>Each ancillary event gets its own collapsible section with place, date, and time visible immediately.</p>
-      </div>
-
-      <details open>
-        <summary>
-          <div class="sw-summary-text">
-            [Ancillary Event 1 Title]
-            <small>[Place Placeholder] • [Date Placeholder] • [Time Placeholder]</small>
-          </div>
-          <div class="sw-pill">Details</div>
-        </summary>
-        <div class="sw-body">
-          <p>[Describe the event, the audience, and how it connects to the festival.]</p>
-          <div class="sw-grid-3">
-            <div class="sw-box"><strong>Place</strong>[Venue / Address Placeholder]</div>
-            <div class="sw-box"><strong>Date</strong>[Date Placeholder]</div>
-            <div class="sw-box"><strong>Time</strong>[Time Placeholder]</div>
-          </div>
-        </div>
-      </details>
-
-      <details>
-        <summary>
-          <div class="sw-summary-text">
-            [Ancillary Event 2 Title]
-            <small>[Place Placeholder] • [Date Placeholder] • [Time Placeholder]</small>
-          </div>
-          <div class="sw-pill">Details</div>
-        </summary>
-        <div class="sw-body">
-          <p>[Describe this ancillary program.]</p>
-          <div class="sw-grid-3">
-            <div class="sw-box"><strong>Place</strong>[Venue / Address Placeholder]</div>
-            <div class="sw-box"><strong>Date</strong>[Date Placeholder]</div>
-            <div class="sw-box"><strong>Time</strong>[Time Placeholder]</div>
-          </div>
-        </div>
-      </details>
-
-      <details>
-        <summary>
-          <div class="sw-summary-text">
-            [Ancillary Event 3 Title]
-            <small>[Place Placeholder] • [Date Placeholder] • [Time Placeholder]</small>
-          </div>
-          <div class="sw-pill">Details</div>
-        </summary>
-        <div class="sw-body">
-          <p>[Describe this ancillary program.]</p>
-          <div class="sw-grid-3">
-            <div class="sw-box"><strong>Place</strong>[Venue / Address Placeholder]</div>
-            <div class="sw-box"><strong>Date</strong>[Date Placeholder]</div>
-            <div class="sw-box"><strong>Time</strong>[Time Placeholder]</div>
-          </div>
-        </div>
-      </details>
-    </div>
-
-    <div class="sw-card">
-      <div class="sw-card-head">
-        <div class="sw-label">Section 3</div>
-        <h2>Partners</h2>
-        <p>Separate community locations and sponsors so the partnership information stays organized.</p>
-      </div>
-
-      <details open>
-        <summary>
-          <div class="sw-summary-text">
-            Community Locations
-            <small>[Primary neighborhood or district placeholder]</small>
-          </div>
-          <div class="sw-pill">Open</div>
-        </summary>
-        <div class="sw-body">
-          <div class="sw-grid-3">
-            <div class="sw-box"><strong>[Community Location 1]</strong>[Role, address, or activation placeholder]</div>
-            <div class="sw-box"><strong>[Community Location 2]</strong>[Role, address, or activation placeholder]</div>
-            <div class="sw-box"><strong>[Community Location 3]</strong>[Role, address, or activation placeholder]</div>
-          </div>
-        </div>
-      </details>
-
-      <details>
-        <summary>
-          <div class="sw-summary-text">
-            Sponsors
-            <small>[Funding, in-kind, and promotional supporters]</small>
-          </div>
-          <div class="sw-pill">Open</div>
-        </summary>
-        <div class="sw-body">
-          <div class="sw-grid-3">
-            <div class="sw-box"><strong>[Sponsor 1]</strong>[Sponsorship level or contribution placeholder]</div>
-            <div class="sw-box"><strong>[Sponsor 2]</strong>[Sponsorship level or contribution placeholder]</div>
-            <div class="sw-box"><strong>[Sponsor 3]</strong>[Sponsorship level or contribution placeholder]</div>
-          </div>
-        </div>
-      </details>
-    </div>
-
-    <div class="sw-card">
-      <div class="sw-card-head">
-        <div class="sw-label">Section 4</div>
-        <h2>Prospectus</h2>
-        <p>Use this section for the short essay on why this festival matters now and why the films were chosen.</p>
-      </div>
-
-      <details open>
-        <summary>
-          <div class="sw-summary-text">
-            [Prospectus Essay Placeholder]
-            <small>Why this festival matters now, and why these films belong in it</small>
-          </div>
-          <div class="sw-pill">Read</div>
-        </summary>
-        <div class="sw-body">
-          <div class="sw-box">
-            <strong>[Insert short essay here]</strong>
-            Explain the urgency of the festival, the local cultural stakes, and the programming logic behind the selected films.
-          </div>
-        </div>
-      </details>
-    </div>
-
-    <div class="sw-card">
-      <div class="sw-card-head">
-        <div class="sw-label">Section 5</div>
-        <h2>Trailers for the Films</h2>
-        <p>Replace the boxes below with embedded trailers, linked videos, or stills for the selected films.</p>
-      </div>
-
-      <details open>
-        <summary>
-          <div class="sw-summary-text">
-            [Featured Film Trailers]
-            <small>Embed YouTube, Vimeo, or hosted video modules here</small>
-          </div>
-          <div class="sw-pill">Watch</div>
-        </summary>
-        <div class="sw-body">
-          <div class="sw-grid-2">
-            <div class="sw-box">
-              <div class="sw-video">[Film Trailer 1 Placeholder]</div>
-              <strong>[Film Title 1]</strong>
-              [Short rationale or teaser copy placeholder]
-            </div>
-            <div class="sw-box">
-              <div class="sw-video">[Film Trailer 2 Placeholder]</div>
-              <strong>[Film Title 2]</strong>
-              [Short rationale or teaser copy placeholder]
-            </div>
-            <div class="sw-box">
-              <div class="sw-video">[Film Trailer 3 Placeholder]</div>
-              <strong>[Film Title 3]</strong>
-              [Short rationale or teaser copy placeholder]
-            </div>
-            <div class="sw-box">
-              <div class="sw-video">[Film Trailer 4 Placeholder]</div>
-              <strong>[Film Title 4]</strong>
-              [Short rationale or teaser copy placeholder]
-            </div>
-          </div>
-        </div>
-      </details>
-    </div>
-
-    <div class="sw-card">
-      <div class="sw-card-head">
-        <div class="sw-label">Section 6 &amp; 7</div>
-        <h2>Calls to Action</h2>
-        <p>Keep product and fundraising actions separate from the core program information.</p>
-      </div>
-
-      <details open>
-        <summary>
-          <div class="sw-summary-text">
-            Horror-Inspired Dolls
-            <small>Collector CTA block</small>
-          </div>
-          <div class="sw-pill">Shop</div>
-        </summary>
-        <div class="sw-body">
-          <div class="sw-box">
-            <strong>[Doll Collection Ad Placeholder]</strong>
-            Add product image, story, pricing language, and purchase details for dolls inspired by horror films.
-            <div class="sw-btns">
-              <a href="#" class="sw-btn sw-btn-primary">[Shop the Dolls]</a>
-              <a href="#" class="sw-btn sw-btn-secondary">[Collection Details]</a>
-            </div>
-          </div>
-        </div>
-      </details>
-
-      <details>
-        <summary>
-          <div class="sw-summary-text">
-            Raffle &amp; T-Shirt Purchase Options
-            <small>Fundraising and merch CTA block</small>
-          </div>
-          <div class="sw-pill">Buy</div>
-        </summary>
-        <div class="sw-body">
-          <div class="sw-box">
-            <strong>[Raffle and T-Shirt Placeholder]</strong>
-            Add purchase links, pricing, fundraising explanation, shipping or pickup instructions, and urgency copy.
-            <div class="sw-btns">
-              <a href="#" class="sw-btn sw-btn-primary">[Enter the Raffle]</a>
-              <a href="#" class="sw-btn sw-btn-secondary">[Buy a T-Shirt]</a>
-            </div>
-          </div>
-        </div>
-      </details>
-    </div>
-
   </div>
+
+  <!-- MAIN EVENTS -->
+  <div class="card">
+    <div class="head">
+      <div class="label">Main Events</div>
+      <h2>Festival Schedule</h2>
+    </div>
+
+    <details open>
+      <summary>Watermelon Jack O’ Lantern Carving — June 24</summary>
+      <div class="body">
+        <p>
+          Kick off Summerween with a playful twist on a Halloween classic.
+          Join the community for watermelon carving and creative expression.
+        </p>
+        <div class="box">
+          <strong>Location:</strong> The Q House<br>
+          <strong>Date:</strong> June 24<br>
+          <strong>Time:</strong> [TBD]
+        </div>
+      </div>
+    </details>
+
+    <details>
+      <summary>Film Screening — June 27</summary>
+      <div class="body">
+        <p>
+          The festival concludes with a curated horror film screening celebrating
+          the eerie and imaginative side of cinema.
+        </p>
+
+        <div class="box">
+          <strong>Location:</strong> The Flint Street Theater<br>
+          <strong>Date:</strong> June 27<br>
+          <strong>Time:</strong> [TBD]
+        </div>
+
+        <div class="box">
+          <strong>Additional Programming:</strong><br>
+          • Zine Tabling from Connecticunt<br>
+          • Introduction by Planned Parenthood Squad
+        </div>
+      </div>
+    </details>
+  </div>
+
+  <!-- ANCILLARY EVENTS -->
+  <div class="card">
+    <div class="head">
+      <div class="label">Community Events</div>
+      <h2>Ancillary Programming</h2>
+      <p>
+        Additional events will appear across the city, encouraging residents to explore
+        neighborhood spaces while participating in a shared celebration of spooky culture.
+      </p>
+    </div>
+
+    <details>
+      <summary>Costume Contest & Game Night</summary>
+      <div class="body">
+        <p>
+          A community gathering featuring costumes, games, and social activities.
+        </p>
+        <div class="box">
+          <strong>Location:</strong> [TBD]<br>
+          <strong>Date:</strong> [TBD]<br>
+          <strong>Time:</strong> [TBD]
+        </div>
+      </div>
+    </details>
+
+    <details>
+      <summary>Additional Satellite Events</summary>
+      <div class="body">
+        <p>
+          Summerween is actively building partnerships with local venues,
+          artists, and organizations across New Haven. More events will be announced soon.
+        </p>
+      </div>
+    </details>
+  </div>
+
+  <!-- PROSPECTUS -->
+  <div class="card">
+    <div class="head">
+      <div class="label">About</div>
+      <h2>Prospectus</h2>
+    </div>
+
+    <details open>
+      <summary>Why Summerween</summary>
+      <div class="body">
+        <p>
+          Summerween responds to a growing cultural interest in horror and supernatural storytelling
+          beyond the traditional Halloween season. By placing these experiences in the middle of summer,
+          the festival creates a unique contrast—warm weather paired with eerie themes—inviting new audiences
+          to engage with the genre in unexpected ways.
+        </p>
+        <p>
+          The selected programming blends film, community participation, and local collaboration,
+          positioning Summerween as both a cultural event and a neighborhood experience.
+        </p>
+      </div>
+    </details>
+  </div>
+
+  <!-- CTA -->
+  <div class="card">
+    <div class="head">
+      <div class="label">Get Involved</div>
+      <h2>Support & Participate</h2>
+    </div>
+
+    <details open>
+      <summary>Festival Participation & Merch</summary>
+      <div class="body">
+        <p>
+          Summerween is currently building partnerships with venues, artists, and collaborators.
+          Opportunities to participate, support, and purchase festival items will be announced soon.
+        </p>
+
+        <a href="#" class="btn btn-primary">Join / Partner</a>
+        <a href="#" class="btn btn-secondary">Stay Updated</a>
+      </div>
+    </details>
+  </div>
+
+  <!-- CONTACT -->
+  <div class="card">
+    <div class="head">
+      <div class="label">Contact</div>
+      <h2>Media Contact</h2>
+      <p>
+        <strong>Alexzandria Robin</strong><br>
+        allylubon@gmail.com<br>
+        323-628-6128
+      </p>
+    </div>
+  </div>
+
 </div>
