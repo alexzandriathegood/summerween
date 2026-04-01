@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Summerween Festival</title>
+  <style>
+    body{margin:0;font-family:"Century Schoolbook",Georgia,serif;background:#fff;color:#1f1f1f;line-height:1.6}
+    .summerween,.summerween *{box-sizing:border-box}
+    .summerween{max-width:1100px;margin:0 auto;padding:24px;background:#fff}
+    .summerween a{color:#111;text-decoration:none}
+    .hero{background:#111;color:#fff;border-radius:22px;overflow:hidden;margin-bottom:18px}
+    .hero-grid{display:grid;grid-template-columns:1.1fr .9fr}
+    .hero-copy{padding:34px}
+    .eyebrow{display:inline-block;padding:6px 12px;border-radius:999px;background:#fff;color:#111;font-size:12px;text-transform:uppercase;letter-spacing:.08em;margin-bottom:14px}
+    h1,h2,h3,h4{margin:0 0 10px;line-height:1.1}
+    h1{font-size:52px;letter-spacing:-.03em}
+    p{margin:0 0 12px}
+    .hero-meta{margin-top:18px}
+    .chip{display:inline-block;margin:0 8px 8px 0;padding:10px 14px;border-radius:999px;background:#fff;color:#111;font-size:14px}
+    .hero-graphic{min-height:320px;display:flex;align-items:center;justify-content:center;padding:20px;background:#1d1d1d}
+    .graphic-box{width:100%;min-height:260px;border:2px dashed rgba(255,255,255,.45);border-radius:18px;display:flex;align-items:center;justify-content:center;text-align:center;padding:24px;color:#fff}
+    .nav{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 18px}
+    .nav a{display:inline-block;padding:10px 14px;border:1px solid #d7d7d7;border-radius:999px;background:#f7f7f7}
+    .card{background:#fff;border:1px solid #dcdcdc;border-radius:18px;margin-bottom:18px;overflow:hidden}
+    .card-head{padding:18px 20px 10px;background:#fafafa;border-bottom:1px solid #ececec}
+    .label{display:inline-block;margin-bottom:8px;font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:#111}
+    details{border-top:1px solid #ececec}
+    details:first-of-type{border-top:none}
+    summary{cursor:pointer;list-style:none;padding:16px 20px;font-weight:bold;display:flex;justify-content:space-between;gap:14px;align-items:flex-start}
+    summary::-webkit-details-marker{display:none}
+    .summary-sub{display:block;color:#5b5b5b;font-weight:normal;font-size:14px;margin-top:4px}
+    .pill{white-space:nowrap;font-size:12px;padding:6px 10px;border-radius:999px;background:#f2f2f2;border:1px solid #ddd;color:#333}
+    .body{padding:0 20px 18px}
+    .box{background:#f8f8f8;border:1px solid #e6e6e6;border-radius:14px;padding:14px;margin-top:10px}
+    .grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+    .poster{display:block;background:#efefef;border:1px solid #dadada;border-radius:14px;overflow:hidden;text-align:center}
+    .poster-image{aspect-ratio:2/3;display:flex;align-items:center;justify-content:center;background:linear-gradient(180deg,#ddd,#f7f7f7);color:#444;padding:18px;font-size:18px}
+    .poster-copy{padding:14px}
+    .note{font-size:14px;color:#5c5c5c}
+    .btn-row{margin-top:14px;display:flex;flex-wrap:wrap;gap:10px}
+    .btn{display:inline-block;padding:12px 16px;border-radius:10px;border:1px solid #111;background:#111;color:#fff}
+    .btn.secondary{background:#fff;color:#111}
+    .about-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:14px}
+    .footer-note{font-size:14px;color:#666;margin-top:12px}
+    .newsletter-overlay{position:fixed;inset:0;background:rgba(0,0,0,.55);display:none;align-items:center;justify-content:center;padding:20px;z-index:9999}
+    .newsletter-modal{width:min(100%,560px);background:#fff;color:#111;border-radius:18px;padding:24px;box-shadow:0 18px 50px rgba(0,0,0,.25);position:relative}
+    .newsletter-close{position:absolute;top:10px;right:10px;border:1px solid #ccc;background:#fff;border-radius:999px;width:34px;height:34px;cursor:pointer;font-size:18px;line-height:1}
+    .newsletter-form{display:grid;gap:10px;margin-top:14px}
+    .newsletter-form input{padding:12px;border:1px solid #ccc;border-radius:10px;font:inherit}
+    .newsletter-form button{padding:12px 16px;border:1px solid #111;border-radius:10px;background:#111;color:#fff;font:inherit;cursor:pointer}
+    .inline-update{margin-top:14px;font-size:15px}
+    @media (max-width:820px){.hero-grid,.grid-2,.about-grid{grid-template-columns:1fr} h1{font-size:38px} summary{flex-direction:column}}
+  </style>
+</head>
+<body>
+  <div class="summerween">
+    <div class="nav">
+      <a href="#schedule">Festival Schedule</a>
+      <a href="#community">Community Events</a>
+      <a href="#raffle">Raffle</a>
+      <a href="#screenings">Summerween Screenings</a>
+      <a href="#partners">Sponsors & Partners</a>
+      <a href="#questions">Have a Question?</a>
+      <a href="#" id="open-newsletter">Join Newsletter</a>
+    </div>
+
+    <div class="hero">
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <div class="eyebrow">New Haven • June 24–27</div>
+          <h1>Summerween Festival</h1>
+          <p>Summerween brings spooky summer fun to New Haven through film, creative activities, and community gatherings across the city.</p>
+          <p>Inspired by the growing love for horror and supernatural storytelling beyond the fall season, Summerween invites residents to celebrate the eerie side of summer through playful events and local partnerships.</p>
+          <div class="hero-meta">
+            <span class="chip">June 24–27</span>
+            <span class="chip">New Haven, CT</span>
+            <span class="chip">Details Forthcoming</span>
+          </div>
+          <div class="inline-update">Follow <strong>@alexzandriathegood</strong> for updates.</div>
+        </div>
+        <div class="hero-graphic">
+          <div class="graphic-box">
+            <div>
+              <h3>Summerween Graphic Placeholder</h3>
+              <p>Add festival art, poster, or branded image here.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" id="schedule">
+      <div class="card-head">
+        <div class="label">Festival Schedule</div>
+        <h2>Festival Schedule</h2>
+        <p>Keep the dropdown format. Each line follows: month day - event title - location - start to end time - street address.</p>
+      </div>
+      <details open>
+        <summary><div>JUNE 24 - WATERMELON JACK O’ LANTERN CARVING - THE Q HOUSE - [START TO END TIME] - [STREET ADDRESS]<span class="summary-sub">Click to read more about the event.</span></div><span class="pill">Open</span></summary>
+        <div class="body"><p>Kick off Summerween with a playful summer variation on a Halloween tradition. This event centers on creative participation, seasonal atmosphere, and community gathering.</p></div>
+      </details>
+      <details>
+        <summary><div>JUNE [DATE TBD] - [EVENT TITLE] - [LOCATION] - [START TO END TIME] - [STREET ADDRESS]<span class="summary-sub">Click to read more about the event.</span></div><span class="pill">Open</span></summary>
+        <div class="body"><p>Additional event details forthcoming.</p></div>
+      </details>
+      <details>
+        <summary><div>JUNE 27 - MAIN SCREENING AT FLINT STREET THEATER - FLINT STREET THEATER - [START TO END TIME] - [STREET ADDRESS]<span class="summary-sub">Click to read more about the event.</span></div><span class="pill">Open</span></summary>
+        <div class="body">
+          <p>The festival concludes with the main screening at Flint Street Theater. This program also includes zine tabling from Connecticunt and an introduction by Planned Parenthood Squad.</p>
+          <div class="box"><strong>Additional Programming</strong><br />Zine tabling from Connecticunt<br />Introduction by Planned Parenthood Squad</div>
+        </div>
+      </details>
+    </div>
+
+    <div class="card" id="community">
+      <div class="card-head">
+        <div class="label">Community Events</div>
+        <h2>How to Join Us</h2>
+        <p>Community events and citywide participation opportunities.</p>
+      </div>
+      <details open>
+        <summary><div>Costume Contest & Game Night - [LOCATION] - [START TO END TIME] - [STREET ADDRESS]<span class="summary-sub">Click to read more about the event.</span></div><span class="pill">Open</span></summary>
+        <div class="body"><p>A themed gathering built around costumes, games, and a shared love of spooky culture.</p></div>
+      </details>
+      <details>
+        <summary><div>Community Collaborations - Various New Haven Locations<span class="summary-sub">Click to read more about how local venues and organizations can participate.</span></div><span class="pill">Open</span></summary>
+        <div class="body"><p>Summerween is building partnerships with local venues, artists, and community organizations across New Haven. More participating locations will be announced in the coming weeks.</p></div>
+      </details>
+    </div>
+
+    <div class="card" id="raffle">
+      <div class="card-head">
+        <div class="label">Raffle</div>
+        <h2>Summerween Raffle</h2>
+        <p>Support the event and support local businesses in New Haven.</p>
+      </div>
+      <div class="body">
+        <div class="box">Summerween is a community-oriented event.</div>
+        <div class="box">Support the amazing businesses in New Haven.</div>
+        <div class="box">Enter for your chance to win gift certificates to Grails, Lit New Haven, and additional participating businesses.</div>
+        <div class="btn-row"><a class="btn" href="#">Enter the Raffle</a></div>
+      </div>
+    </div>
+
+    <div class="card" id="screenings">
+      <div class="card-head">
+        <div class="label">Summerween Screenings</div>
+        <h2>Summerween Screenings</h2>
+        <p>Click a poster to view the trailer. Replace the placeholders with actual posters or stock images.</p>
+      </div>
+      <div class="body">
+        <div class="grid-2">
+          <a class="poster" href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer">
+            <div class="poster-image">Film Poster Placeholder 1</div>
+            <div class="poster-copy"><h3>[Film Title 1]</h3><div class="note">Click poster to watch trailer.</div></div>
+          </a>
+          <a class="poster" href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer">
+            <div class="poster-image">Film Poster Placeholder 2</div>
+            <div class="poster-copy"><h3>[Film Title 2]</h3><div class="note">Click poster to watch trailer.</div></div>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" id="partners">
+      <div class="card-head">
+        <div class="label">Sponsors & Partners</div>
+        <h2>Sponsors & Partners</h2>
+        <p>Use this section for community locations, collaborators, and sponsor acknowledgments.</p>
+      </div>
+      <div class="body">
+        <div class="box"><strong>Community Partners</strong><br />The Q House<br />Flint Street Theater<br />Connecticunt<br />Planned Parenthood Squad</div>
+        <div class="box"><strong>Sponsors</strong><br />[Add sponsor names here]</div>
+      </div>
+    </div>
+
+    <div class="card" id="questions">
+      <div class="card-head">
+        <div class="label">Have a Question?</div>
+        <h2>About Me</h2>
+      </div>
+      <div class="body">
+        <div class="about-grid">
+          <div class="box">
+            <p>Alexzandria is an artist based in New Haven, CT. Summerween is a community-driven project built to bring horror, creativity, and neighborhood collaboration into the summer season.</p>
+            <p>Follow <strong>@alexzandriathegood</strong> for updates.</p>
+          </div>
+          <div class="box">
+            <p><strong>Have a question?</strong></p>
+            <p>Use the contact page to send a message.</p>
+            <div class="btn-row"><a class="btn secondary" href="contact.html">Go to Contact Form</a></div>
+            <p class="footer-note">For direct media contact: allylubon@gmail.com • 323-628-6128</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="newsletter-overlay" id="newsletter-overlay">
+    <div class="newsletter-modal">
+      <button class="newsletter-close" id="close-newsletter" aria-label="Close">&times;</button>
+      <h3>Join the Summerween Newsletter</h3>
+      <p>Get festival updates, event announcements, and community news.</p>
+      <form class="newsletter-form" action="mailto:contact@alexzandriathegood.com?subject=Summerween%20Newsletter%20Signup" method="post" enctype="text/plain">
+        <input type="text" name="name" placeholder="Your name" />
+        <input type="email" name="email" placeholder="Your email" required />
+        <button type="submit">Join Newsletter</button>
+      </form>
+      <p class="footer-note">Follow @alexzandriathegood for updates.</p>
+    </div>
+  </div>
+
+  <script>
+    (function() {
+      var overlay = document.getElementById('newsletter-overlay');
+      var openBtn = document.getElementById('open-newsletter');
+      var closeBtn = document.getElementById('close-newsletter');
+      function openModal(e){ if(e)e.preventDefault(); overlay.style.display='flex'; }
+      function closeModal(){ overlay.style.display='none'; }
+      if(openBtn) openBtn.addEventListener('click', openModal);
+      if(closeBtn) closeBtn.addEventListener('click', closeModal);
+      overlay.addEventListener('click', function(e){ if(e.target===overlay) closeModal(); });
+      setTimeout(function(){ openModal(); }, 1400);
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact | Summerween Festival</title>
+  <style>
+    body{margin:0;font-family:"Century Schoolbook",Georgia,serif;background:#fff;color:#1f1f1f}
+    .wrap{max-width:760px;margin:0 auto;padding:24px}
+    .card{background:#fff;border:1px solid #ddd;border-radius:18px;padding:24px}
+    h1,h2,p{margin-top:0}
+    .form-grid{display:grid;gap:12px;margin-top:16px}
+    input,textarea{width:100%;padding:12px;border:1px solid #ccc;border-radius:10px;font:inherit;box-sizing:border-box}
+    textarea{min-height:180px;resize:vertical}
+    button,.back-link{display:inline-block;padding:12px 16px;border-radius:10px;border:1px solid #111;background:#111;color:#fff;font:inherit;text-decoration:none;cursor:pointer}
+    .back-link{background:#fff;color:#111;margin-right:10px}
+    .note{margin-top:14px;color:#666;font-size:14px}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="card">
+      <h1>Contact Summerween</h1>
+      <p>Use this form to send a message to <strong>contact@alexzandriathegood.com</strong>.</p>
+      <form action="mailto:contact@alexzandriathegood.com?subject=Summerween%20Inquiry" method="post" enctype="text/plain">
+        <div class="form-grid">
+          <input type="text" name="name" placeholder="Your name" required />
+          <input type="email" name="email" placeholder="Your email" required />
+          <input type="text" name="subject" placeholder="Subject" />
+          <textarea name="message" placeholder="Your message" required></textarea>
+          <div>
+            <a class="back-link" href="index.html">Back to Summerween</a>
+            <button type="submit">Send Message</button>
+          </div>
+        </div>
+      </form>
+      <p class="note">This version uses a mailto form. It opens the visitor’s email client to send the message. For automatic form delivery on a static site, connect the form to a service such as Formspree.</p>
+    </div>
+  </div>
+</body>
+</html>
