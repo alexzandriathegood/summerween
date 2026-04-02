@@ -185,14 +185,17 @@
       gap: 14px;
     }
 
-    .poster-image {
-      height: 220px;
-      aspect-ratio: auto;
-      padding: 10px;
-      font-size: 14px;
+    .poster {
+      display: flex;
+      flex-direction: column;
+      border: 1px solid #dcdcdc;
+      border-radius: 12px;
+      overflow: hidden;
+      background: #fff;
     }
 
     .poster-image {
+      width: 100%;
       aspect-ratio: 2 / 3;
       display: flex;
       align-items: center;
@@ -234,12 +237,20 @@
       border-radius: 10px;
       border: 1px solid #111;
       background: #111;
-      color: #fff;
+      color: #fff !important;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .btn-blk:hover {
+      background: #2a2a2a;
+      border-color: #2a2a2a;
+      color: #fff !important;
     }
 
     .btn-blk,
     .btn-blk a {
-      color: #fff;
+      color: #fff !important;
     }
 
     .newsletter-overlay {
@@ -368,10 +379,10 @@
         <h2>Festival Schedule</h2>
       </div>
 
-      <details open>
+      <details>
         <summary>
           <div>
-            JUNE 24 - WATERMELON JACK O’ LANTERN CARVING - THE Q HOUSE - [START TO END TIME] - [STREET ADDRESS]
+            June 24 - Watermelon Jack O'Lantern Carving - The Q House - [START TO END TIME] - 197 Dixwell Ave, New Haven, CT 06511
           </div>
           <span class="pill">Read More</span>
         </summary>
@@ -386,7 +397,7 @@
       <details>
         <summary>
           <div>
-            JUNE [DATE TBD] - Outdoor Screening - Lit New Haven - [START TO END TIME] - [STREET ADDRESS]
+            June [DATE TBD] - Outdoor Screening - Lit New Haven - [START TO END TIME] - 169 East St, New Haven, CT 06511
           </div>
           <span class="pill">Read More</span>
         </summary>
@@ -398,7 +409,7 @@
       <details>
         <summary>
           <div>
-            JUNE 27 - MAIN SCREENING AT FLINT STREET THEATER - FLINT STREET THEATER - [START TO END TIME] - [STREET ADDRESS]
+            June 27 - Main Screening - Flint Street Theater - [START TO END TIME] - 25 Flint St, New Haven, CT 06513
           </div>
           <span class="pill">Read More</span>
         </summary>
@@ -422,10 +433,14 @@
         <p>Support culture programming and local businesses in New Haven.</p>
       </div>
       <div class="body-copy">
-        <div class="box">Support the amazing businesses in New Haven.</div>
         <div class="box">
-          Enter for your chance to win gift certificates to Grails, Lit New Haven,
-          and additional participating businesses.
+          Support the return of communal cinema in New Haven.
+        </div>
+        <div class="box">
+          Every entry directly helps bring Summerween to life.
+        </div>
+        <div class="box">
+          Win rare prizes from local businesses only available through the festival!
         </div>
         <div class="btn-row">
           <a class="btn-blk" href="#">Enter the Raffle</a>
@@ -435,10 +450,7 @@
 
     <div class="card" id="screenings">
       <div class="card-head">
-        <h2>Summerween Screenings</h2>
-        <p>
-          Click a poster to view the trailer.
-        </p>
+        <h2>Official Film Festival Selections</h2>
       </div>
       <div class="body-copy">
         <div class="grid-2">
@@ -446,7 +458,6 @@
             <div class="poster-image">Film Poster Placeholder 1</div>
             <div class="poster-copy">
               <h3>[Film Title 1]</h3>
-              <div class="note">Click poster to watch trailer.</div>
             </div>
           </a>
 
@@ -454,7 +465,6 @@
             <div class="poster-image">Film Poster Placeholder 2</div>
             <div class="poster-copy">
               <h3>[Film Title 2]</h3>
-              <div class="note">Click poster to watch trailer.</div>
             </div>
           </a>
         </div>
@@ -463,8 +473,7 @@
 
     <div class="card" id="partners">
       <div class="card-head">
-        <div class="label">Sponsors & Partners</div>
-        <h2>Sponsors & Partners</h2>
+        <h2>Our Sponsors & Partners</h2>
       </div>
       <div class="body-copy">
         <div class="box">
@@ -472,7 +481,8 @@
           The Q House<br />
           Flint Street Theater<br />
           Connecticunt<br />
-          Planned Parenthood Squad
+          Planned Parenthood Squad <br />
+          Lit New Haven
         </div>
         <div class="box">
           <strong>Sponsors</strong><br />
