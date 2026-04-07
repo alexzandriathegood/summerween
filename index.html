@@ -497,15 +497,11 @@
       <button class="newsletter-close" id="close-newsletter" aria-label="Close">&times;</button>
       <h3>Join the Summerween Newsletter</h3>
       <p>Get festival updates, event announcements, and community news.</p>
-      <form
-        class="newsletter-form"
-        action="mailto:contact@alexzandriathegood.com?subject=Summerween%20Newsletter%20Signup"
-        method="post"
-        enctype="text/plain"
-      >
-        <input type="text" name="name" placeholder="Your name" />
-        <input type="email" name="email" placeholder="Your email" required />
-        <button type="submit">Join Newsletter</button>
+      <form class="newsletter-form" id="newsletter-form">
+        <input type="text" name="name" id="signup-name" placeholder="Your name" required />
+        <input type="email" name="email" id="signup-email" placeholder="Your email" required />
+        <button type="submit" id="signup-submit">Join Newsletter</button>
+        <div id="signup-message" style="display: none; padding: 10px; border-radius: 8px; margin-top: 8px;"></div>
       </form>
       <p class="footer-note">Follow @alexzandriathegood for updates.</p>
     </div>
@@ -515,6 +511,12 @@
     (function () {
       var overlay = document.getElementById("newsletter-overlay");
       var closeBtn = document.getElementById("close-newsletter");
+      var form = document.getElementById("newsletter-form");
+      var messageDiv = document.getElementById("signup-message");
+      var submitBtn = document.getElementById("signup-submit");
+
+      // API endpoint - Permanent Cloudflare Tunnel
+      var API_URL = "https://summerween-api.tomos-solutions.com/api/newsletter/signup";
 
       function openModal() {
         overlay.style.display = "flex";
@@ -524,11 +526,71 @@
         overlay.style.display = "none";
       }
 
+      function showMessage(message, isError) {
+        messageDiv.textContent = message;
+        messageDiv.style.display = "block";
+        messageDiv.style.background = isError ? "#fee2e2" : "#d1fae5";
+        messageDiv.style.color = isError ? "#991b1b" : "#065f46";
+        messageDiv.style.border = isError ? "1px solid #fca5a5" : "1px solid #6ee7b7";
+      }
+
+      function hideMessage() {
+        messageDiv.style.display = "none";
+      }
+
       if (closeBtn) closeBtn.addEventListener("click", closeModal);
 
       overlay.addEventListener("click", function (e) {
         if (e.target === overlay) closeModal();
       });
+
+      // Handle form submission
+      if (form) {
+        form.addEventListener("submit", async function (e) {
+          e.preventDefault();
+          hideMessage();
+
+          var name = document.getElementById("signup-name").value.trim();
+          var email = document.getElementById("signup-email").value.trim();
+
+          if (!name || !email) {
+            showMessage("Please fill in all fields.", true);
+            return;
+          }
+
+          // Disable submit button
+          submitBtn.disabled = true;
+          submitBtn.textContent = "Joining...";
+
+          try {
+            var response = await fetch(API_URL, {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify({ name: name, email: email }),
+            });
+
+            var data = await response.json();
+
+            if (response.ok) {
+              showMessage(data.message || "Thank you for signing up!", false);
+              form.reset();
+              setTimeout(function () {
+                closeModal();
+              }, 2000);
+            } else {
+              showMessage(data.detail || "An error occurred. Please try again.", true);
+            }
+          } catch (error) {
+            console.error("Signup error:", error);
+            showMessage("Could not connect to server. Please try again later.", true);
+          } finally {
+            submitBtn.disabled = false;
+            submitBtn.textContent = "Join Newsletter";
+          }
+        });
+      }
 
       setTimeout(function () {
         openModal();
