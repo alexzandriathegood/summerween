@@ -11,6 +11,114 @@
       background: #fff;
       color: #1f1f1f;
       line-height: 1.6;
+      padding-top: 70px;
+    }
+
+    /* Navigation Bar */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: #111;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+      z-index: 1000;
+    }
+
+    nav .nav-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 24px;
+      height: 70px;
+    }
+
+    nav .nav-logo {
+      font-size: 20px;
+      font-weight: bold;
+      color: #fff;
+      text-decoration: none;
+      letter-spacing: 0.5px;
+    }
+
+    nav .nav-logo span {
+      color: #ff6b35;
+    }
+
+    nav .nav-links {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav .nav-links a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 16px;
+      transition: color 0.2s;
+      padding: 8px 0;
+      border-bottom: 2px solid transparent;
+      transition: border-color 0.2s;
+    }
+
+    nav .nav-links a:hover {
+      border-bottom-color: #ff6b35;
+    }
+
+    /* Mobile Menu Toggle */
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: #fff;
+      font-size: 24px;
+      cursor: pointer;
+      padding: 8px;
+    }
+
+    @media (max-width: 820px) {
+      .nav-toggle {
+        display: block;
+      }
+
+      nav .nav-links {
+        position: fixed;
+        top: 70px;
+        left: 0;
+        right: 0;
+        background: #111;
+        flex-direction: column;
+        gap: 0;
+        padding: 16px 24px;
+        transform: translateY(-100%);
+        opacity: 0;
+        pointer-events: none;
+        transition: transform 0.3s, opacity 0.3s;
+      }
+
+      nav .nav-links.active {
+        transform: translateY(0);
+        opacity: 1;
+        pointer-events: all;
+      }
+
+      nav .nav-links a {
+        padding: 12px 0;
+        display: block;
+        border-bottom: 1px solid #333;
+      }
+
+      nav .nav-links a:last-child {
+        border-bottom: none;
+      }
+
+      body {
+        padding-top: 70px;
+      }
     }
 
     .wrap,
@@ -339,6 +447,19 @@
   </style>
 </head>
 <body>
+  <nav>
+    <div class="nav-container">
+      <a href="#top" class="nav-logo">Summerween <span>🎃☀️</span></a>
+      <button class="nav-toggle" aria-label="Toggle menu">☰</button>
+      <ul class="nav-links">
+        <li><a href="#top">Home</a></li>
+        <li><a href="https://alexzandriathegood.com/home.html">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div id="top"></div>
   <div class="wrap">
     <div class="hero">
       <div class="hero-grid">
@@ -471,6 +592,7 @@
       </div>
     </div>
 
+    <div id="contact"></div>
     <div class="card" id="partners">
       <div class="card-head">
         <h2>Our Sponsors & Partners</h2>
@@ -597,6 +719,46 @@
       setTimeout(function () {
         openModal();
       }, 1400);
+    })();
+
+    // Mobile menu toggle
+    (function () {
+      var navToggle = document.querySelector('.nav-toggle');
+      var navLinks = document.querySelector('.nav-links');
+
+      if (navToggle) {
+        navToggle.addEventListener('click', function () {
+          navLinks.classList.toggle('active');
+        });
+      }
+
+      // Close mobile menu when clicking a link
+      var links = document.querySelectorAll('.nav-links a');
+      links.forEach(function (link) {
+        link.addEventListener('click', function () {
+          navLinks.classList.remove('active');
+        });
+      });
+
+      // Smooth scroll to anchors
+      links.forEach(function (link) {
+        if (link.getAttribute('href').startsWith('#')) {
+          link.addEventListener('click', function (e) {
+            e.preventDefault();
+            var target = link.getAttribute('href');
+            if (target === '#top' || target === '#') {
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+            } else {
+              var element = document.querySelector(target);
+              if (element) {
+                var offset = 80; // Account for fixed nav
+                var elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+                window.scrollTo({ top: elementPosition - offset, behavior: 'smooth' });
+              }
+            }
+          });
+        }
+      });
     })();
   </script>
 </body>
