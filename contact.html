@@ -5,9 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contact | Summerween Festival</title>
   <style>
-    body{margin:0;font-family:"Century Schoolbook",Georgia,serif;background:#fff;color:#1f1f1f}
+    body{margin:0;font-family:"Century Schoolbook",Georgia,serif;background:#fff;color:#1f1f1f;padding-top:56px}
     .wrap{max-width:760px;margin:0 auto;padding:24px}
-    .card{background:#fff;border:1px solid #ddd;border-radius:18px;padding:24px}
+    .card{background:#fff;border:1px solid #ddd;border-radius:18px;padding:24px;margin-bottom:18px}
     h1,h2,p{margin-top:0}
     .form-grid{display:grid;gap:12px;margin-top:16px}
     input,textarea{width:100%;padding:12px;border:1px solid #ccc;border-radius:10px;font:inherit;box-sizing:border-box}
@@ -15,9 +15,38 @@
     button,.back-link{display:inline-block;padding:12px 16px;border-radius:10px;border:1px solid #111;background:#111;color:#fff;font:inherit;text-decoration:none;cursor:pointer}
     .back-link{background:#fff;color:#111;margin-right:10px}
     .note{margin-top:14px;color:#666;font-size:14px}
+
+    /* Navigation Bar */
+    nav{position:fixed;top:0;left:0;right:0;background:#111;z-index:1000}
+    nav::after{content:'';position:absolute;bottom:-8px;left:0;right:0;height:8px;background:#111;mask-image:url("data:image/svg+xml,%3Csvg width='100' height='8' viewBox='0 0 100 8' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 4 Q 12.5 0, 25 4 T 50 4 T 75 4 T 100 4 L 100 8 L 0 8 Z' fill='black'/%3E%3C/svg%3E");mask-size:100px 8px;mask-repeat:repeat-x;-webkit-mask-image:url("data:image/svg+xml,%3Csvg width='100' height='8' viewBox='0 0 100 8' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 4 Q 12.5 0, 25 4 T 50 4 T 75 4 T 100 4 L 100 8 L 0 8 Z' fill='black'/%3E%3C/svg%3E");-webkit-mask-size:100px 8px;-webkit-mask-repeat:repeat-x}
+    nav .nav-container{max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;padding:0 24px;height:48px}
+    nav .nav-logo{font-size:18px;font-weight:bold;color:#fff;text-decoration:none;letter-spacing:0.5px}
+    nav .nav-logo span{color:#ff6b35}
+    nav .nav-links{display:flex;gap:28px;list-style:none;margin:0;padding:0}
+    nav .nav-links a{color:#fff;text-decoration:none;font-size:15px;transition:color 0.2s;padding:4px 0;border-bottom:2px solid transparent;transition:border-color 0.2s}
+    nav .nav-links a:hover{border-bottom-color:#ff6b35}
+    .nav-toggle{display:none;background:none;border:none;color:#fff;font-size:24px;cursor:pointer;padding:8px}
+
+    @media (max-width:820px){
+      .nav-toggle{display:block}
+      nav .nav-links{position:fixed;top:48px;left:0;right:0;background:#111;flex-direction:column;gap:0;padding:12px 24px;transform:translateY(-100%);opacity:0;pointer-events:none;transition:transform 0.3s,opacity 0.3s;border-bottom:1px solid #333}
+      nav .nav-links.active{transform:translateY(0);opacity:1;pointer-events:all}
+      nav .nav-links a{padding:10px 0;display:block;border-bottom:1px solid #333}
+      nav .nav-links a:last-child{border-bottom:none}
+    }
   </style>
 </head>
 <body>
+  <nav>
+    <div class="nav-container">
+      <a href="https://alexzandriathegood.com/home.html" class="nav-logo">Summerween <span>🎃☀️</span></a>
+      <button class="nav-toggle" aria-label="Toggle menu">☰</button>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
   <div class="wrap">
     <div class="card" id="questions">
       <div class="card-head">
@@ -32,9 +61,6 @@
           </div>
           <div class="box">
             <p><strong>Have a question?</strong></p>
-            <p>Use the contact page to send a message.</p>
-            <div class="btn-row"><a class="btn secondary" href="contact.html">Go to Contact Form</a></div>
-            <p class="footer-note">For direct media contact: allylubon@gmail.com • 323-628-6128</p>
           </div>
         </div>
       </div>
@@ -54,8 +80,21 @@
           </div>
         </div>
       </form>
-      <p class="note">This version uses a mailto form. It opens the visitor’s email client to send the message. For automatic form delivery on a static site, connect the form to a service such as Formspree.</p>
     </div>
   </div>
+  <script>
+    // Mobile menu toggle
+    (function(){
+      var navToggle=document.querySelector('.nav-toggle');
+      var navLinks=document.querySelector('.nav-links');
+      if(navToggle){
+        navToggle.addEventListener('click',function(){navLinks.classList.toggle('active')});
+      }
+      var links=document.querySelectorAll('.nav-links a');
+      links.forEach(function(link){
+        link.addEventListener('click',function(){navLinks.classList.remove('active')});
+      });
+    })();
+  </script>
 </body>
 </html>
