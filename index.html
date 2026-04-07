@@ -515,8 +515,9 @@
       var messageDiv = document.getElementById("signup-message");
       var submitBtn = document.getElementById("signup-submit");
 
-      // API endpoint - Permanent Cloudflare Tunnel
+      // API endpoint and key
       var API_URL = "https://summerween-api.tomos-solutions.com/api/newsletter/signup";
+      var API_KEY = "sk_summerween_w0gLgtmnQEn2OkH2p5kNR3IDJDnou9Duh86iK0HURM4";
 
       function openModal() {
         overlay.style.display = "flex";
@@ -567,6 +568,7 @@
               method: "POST",
               headers: {
                 "Content-Type": "application/json",
+                "X-API-Key": API_KEY,
               },
               body: JSON.stringify({ name: name, email: email }),
             });
